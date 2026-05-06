@@ -1,67 +1,75 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const riskFill = document.getElementById('riskFill');
-    const progressBar = document.getElementById('progress-bar');
-    const counter = document.getElementById('panel-counter');
+    // --- ПЕРЕМЕННЫЕ ---
     const panels = document.querySelectorAll('.panel');
+    const counter = document.getElementById('panel-counter');
+    const progressBar = document.getElementById('progress-bar');
     const aiToggle = document.getElementById('ai-toggle');
-    const comicImages = document.querySelectorAll('.comic-container img');
+    const riskFill = document.getElementById('riskFill');
+    
+    // Элементы боковой панели (Dev Log)
+    const openDev = document.getElementById('open-dev-log');
+    const closeDev = document.getElementById('close-dev-log');
+    const sidebar = document.getElementById('dev-sidebar');
+    const overlay = document.getElementById('sidebar-overlay');
 
+    // --- 1. ЛОГИКА СКРОЛЛА (Риск-метр и Прогресс) ---
     window.addEventListener('scroll', () => {
+        const totalPanels = panels.length;
         const scrollTotal = document.documentElement.scrollHeight - window.innerHeight;
         const scrollPercent = (window.scrollY / scrollTotal) * 100;
 
-        // Обновляем шкалу риска справа
+        // Обновляем Риск-метр
         if (riskFill) riskFill.style.height = scrollPercent + '%';
 
-        // Синхронный счетчик и прогресс-бар в шапке
         panels.forEach((panel, index) => {
             const rect = panel.getBoundingClientRect();
+            
+            // Если панель в центре экрана — обновляем счетчик и полоску
             if (rect.top < window.innerHeight / 2 && rect.bottom > window.innerHeight / 2) {
-                if (counter) counter.innerText = `Panel ${index + 1} / ${panels.length}`;
-                if (progressBar) progressBar.style.width = ((index + 1) / panels.length * 100) + '%';
+                const currentNum = index + 1;
+                if (counter) counter.innerText = `Panel ${currentNum} / ${totalPanels}`;
+                if (progressBar) progressBar.style.width = (currentNum / totalPanels * 100) + '%';
             }
         });
     });
 
-    // Исправленный ИИ-режим
+    // --- 2. ЛОГИКА AI MODE (Переключение на 16 страниц) ---
     if (aiToggle) {
         aiToggle.addEventListener('change', () => {
-            comicImages.forEach(img => {
-                let currentSrc = img.getAttribute('src');
+            const images = document.querySelectorAll('.panel img');
+            images.forEach(img => {
+                let src = img.getAttribute('src');
                 if (aiToggle.checked) {
-                    if (!currentSrc.includes('_ai.jpg')) {
-                        img.src = currentSrc.replace('.jpg', '_ai.jpg');
+                    // page1.jpg -> page1_ai.jpg
+                    if (!src.includes('_ai.jpg')) {
+                        img.src = src.replace('.jpg', '_ai.jpg');
                     }
                 } else {
-                    img.src = currentSrc.replace('_ai.jpg', '.jpg');
+                    // Возвращаем обычную версию
+                    img.src = src.replace('_ai.jpg', '.jpg');
                 }
             });
+            // Эффект вспышки при переключении
+            document.body.style.filter = "brightness(1.5) contrast(1.2)";
+            setTimeout(() => { document.body.style.filter = "none"; }, 150);
         });
     }
-});
 
-function handleSurvey(ans) {
-    document.querySelector('.survey-btns').style.display = 'none';
-    document.getElementById('survey-thanks').style.display = 'block';
-}
-function submitPoll(vote) {
-    document.getElementById('poll-box').style.display = 'none';
-    document.getElementById('poll-thanks').style.display = 'block';
-    console.log("Poll vote:", vote); // Здесь можно настроить отправку данных
-}
-const openBtn = document.getElementById('open-dev-log');
-const closeBtn = document.getElementById('close-dev-log');
-const sidebar = document.getElementById('dev-sidebar');
-const overlay = document.getElementById('sidebar-overlay');
+    // --- 3. ЛОГИКА БОКОВОЙ ПАНЕЛИ (Development Process) ---
+    if (openDev && sidebar) {
+        openDev.addEventListener('click', () => {
+            sidebar.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Запрет скролла под панелью
+        });
 
-openBtn.addEventListener('click', () => {
-    sidebar.classList.add('active');
-    overlay.classList.add('active');
-});
+        const closeSidebar = () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
 
-[closeBtn, overlay].forEach(el => {
-    el.addEventListener('click', () => {
-        sidebar.classList.remove('active');
-        overlay.classList.remove('active');
-    });
+        closeDev.addEventListener('click', closeSidebar);
+        overlay.addEventListener('click', closeSidebar);
+    }
 });
