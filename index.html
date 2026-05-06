@@ -7,62 +7,100 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
- <button id="open-dev-log" class="dev-log-btn">DEV LOG</button>
-
-<div id="dev-sidebar" class="sidebar">
-    <div class="sidebar-header">
-        <h2>DEVELOPMENT PROCESS</h2>
-        <button id="close-dev-log">✕</button>
+<section class="dev-block">
+    <div class="stage-tag">Alpha Version</div>
+    <div class="dev-text">
+        <p><strong>Description:</strong> Initial prototype with core "Risk Meter" mechanics and first 8 panels. Focus on vertical scroll layout.</p>
+        <p><strong>[ FEEDBACK ]:</strong> Sponsor suggested more narrative depth and interactive elements to engage users.</p>
+        <p class="improved-line"><strong>[ IMPROVED ]:</strong> Refined the Risk Meter logic and reduced panel margins for a seamless Webtoon feel.</p>
     </div>
-
-    <div class="sidebar-content">
-        <section class="dev-block">
-            <div class="stage-tag">ALPHA VERSION</div>
-            <div class="dev-photos">
-                <div class="photo-placeholder"><img src="assets/dev/alpha-1.jpg" alt="Alpha Screen 1"></div>
-                <div class="photo-placeholder"><img src="assets/dev/alpha-2.jpg" alt="Alpha Screen 2"></div>
-            </div>
-            <div class="dev-text">
-                <p><strong>[ FEEDBACK ]:</strong> Спонсор предложил сфокусироваться на визуальном стиле и добавить интерактивности для удержания внимания[cite: 35, 37].</p>
-                <p class="improved-line"><strong>[ IMPROVED ]:</strong> Реализована база вертикального скролла. Добавлен Риск-метр. Уменьшены отступы между кадрами для эффекта Webtoon[cite: 50, 52].</p>
-            </div>
-            <div class="dev-video">
-                <iframe src="https://www.youtube.com/embed/ID_ALPHA_ВИДЕО" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-
-        <section class="dev-block">
-            <div class="stage-tag">BETA VERSION</div>
-            <div class="dev-photos">
-                <div class="photo-placeholder"><img src="assets/dev/beta-1.jpg" alt="Beta Screen 1"></div>
-                <div class="photo-placeholder"><img src="assets/dev/beta-2.jpg" alt="Beta Screen 2"></div>
-            </div>
-            <div class="dev-text">
-                <p><strong>[ FEEDBACK ]:</strong> Тестировщики отметили, что неясно количество оставшегося контента, и попросили больше системности[cite: 42, 43].</p>
-                <p class="improved-line"><strong>[ IMPROVED ]:</strong> Внедрен верхний Progress Bar и счетчик панелей (1/16). Исправлено отображение фото авторов через object-fit[cite: 15, 69].</p>
-            </div>
-            <div class="dev-video">
-                <iframe src="https://www.youtube.com/embed/ID_BETA_ВИДЕО" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
-
-         <section class="dev-block">
-            <div class="stage-tag active">FINAL VERSION</div>
-            <div class="dev-photos">
-                <div class="photo-placeholder"><img src="final-1.jpg" alt="Final Screen 1"></div>
-                <div class="photo-placeholder"><img src="final-2.jpg" alt="Final Screen 2"></div>
-            </div>
-            <div class="dev-text">
-                <p>Итоговый продукт: 16 страниц, AI Mode, Риск-метр и полная адаптивность.</p>
-            </div>
-             <div class="dev-video">
-                <iframe src="https://www.youtube.com/embed/ТВОЙ_ID_3" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </section>
+    <div class="dev-video">
+        <iframe src="https://www.youtube.com/embed/YOUR_ALPHA_ID" frameborder="0" allowfullscreen title="Sponsor Interview Alpha"></iframe>
     </div>
-</div>
+</section>
 
-<div id="sidebar-overlay" class="overlay"></div>
+<section class="dev-block">
+    <div class="stage-tag">Beta Version</div>
+    <div class="dev-text">
+        <p><strong>Description:</strong> Expanded to 12 panels with refined neon aesthetics. Introduced "AI Mode" toggle prototype.</p>
+        <p><strong>[ FEEDBACK ]:</strong> Users wanted to know their progress and felt the transition to AI images was too abrupt.</p>
+        <p class="improved-line"><strong>[ IMPROVED ]:</strong> Added a Progress Bar, Panel Counter (e.g., 1/16), and a brightness "flash" effect for the AI toggle.</p>
+    </div>
+    <div class="dev-video">
+        <iframe src="https://www.youtube.com/embed/YOUR_BETA_ID" frameborder="0" allowfullscreen title="User Testing Beta"></iframe>
+    </div>
+</section>
+
+<section class="dev-block">
+    <div class="stage-tag active">Final Version</div>
+    <div class="dev-text">
+        <p><strong>Description:</strong> Complete 16-panel story with full AI-Mode integration and an "Action Plan" for gambling help.</p>
+        <p><strong>[ FEEDBACK ]:</strong> Final polish needed for mobile responsiveness and faster image loading.</p>
+        <p class="improved-line"><strong>[ IMPROVED ]:</strong> Optimized all 32 images (Original + AI) using TinyPNG. Implemented responsive CSS for mobile devices.</p>
+    </div>
+     <div class="dev-video">
+        <iframe src="https://www.youtube.com/embed/YOUR_FINAL_ID" frameborder="0" allowfullscreen title="User Testing Beta"></iframe>
+    </div>
+</section>
+
+<section class="dev-block">
+    <div class="stage-tag active">Evidence of Development</div>
+    
+    <p class="evidence-title">Tools Used:</p>
+    <ul class="tools-list">
+        <li>VS Code & GitHub Pages (Development)</li>
+        <li>Midjourney & DALL-E (AI Visuals)</li>
+        <li>TinyPNG (Image Optimization)</li>
+    </ul>
+
+    <p class="evidence-title">Before vs After:</p>
+    <table class="dev-table">
+        <tr>
+            <th>Feature</th>
+            <th>Alpha</th>
+            <th>Final</th>
+        </tr>
+        <tr>
+            <td>Panels</td>
+            <td>8</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>UI</td>
+            <td>Static</td>
+            <td>Dynamic Progress</td>
+        </tr>
+        <tr>
+            <td>Visuals</td>
+            <td>Basic</td>
+            <td>AI "Hallucination"</td>
+        </tr>
+    </table>
+
+    <p class="evidence-title">Code Snippet (Progress Logic):</p>
+    <pre class="code-block">
+<code>window.addEventListener('scroll', () => {
+  const percent = (window.scrollY / scrollMax) * 100;
+  progressBar.style.width = percent + '%';
+});</code>
+    </pre>
+</section>
+
+<section class="dev-block">
+    <div class="stage-tag active">Project Reflection</div>
+    <div class="reflection-item">
+        <p class="question">1.What improved the most from Alpha to Final?</p>
+        <p class="answer">It was comics in ai mode. </p>
+    </div>
+    <div class="reflection-item">
+        <p class="question">2. How did AI enhance the message?</p>
+        <p class="answer">The "AI Mode" visually represents the distorted reality of a gambling addict, creating a powerful contrast with the original art.</p>
+    </div>
+    <div class="reflection-item">
+        <p class="question">3. What would you do differently?</p>
+        <p class="answer">I would implement more complex CSS animations (parallax effects) to make the panels feel even more 3D and immersive.</p>
+    </div>
+</section>
     <div class="tv-effect"></div> 
     <div class="risk-meter">      
         <div class="risk-fill" id="riskFill"></div>
