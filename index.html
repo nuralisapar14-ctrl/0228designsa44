@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odds Against Life | Beta</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   <button id="open-dev-log" class="dev-log-btn">DEV LOG</button>
+
+<div id="dev-sidebar" class="sidebar">
+    <div class="sidebar-header">
+        <h2>DEVELOPMENT PROCESS</h2>
+        <button id="close-dev-log">✕</button>
+    </div>
+
+    <div class="sidebar-content">
+        
+        <section class="dev-block">
+            <div class="stage-tag">ALPHA VERSION</div>
+            <div class="dev-photos">
+                <div class="photo-placeholder"><img src="alpha-1.jpg" alt="Alpha Screen 1"></div>
+                <div class="photo-placeholder"><img src="alpha-2.jpg" alt="Alpha Screen 2"></div>
+            </div>
+            <div class="dev-text">
+                <p><strong>Feedback:</strong> Спонсор предложил сфокусироваться на визуальном стиле и добавить интерактивности.</p>
+            </div>
+            <div class="dev-video">
+                <iframe src="https://www.youtube.com/embed/ТВОЙ_ID_1" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="dev-block">
+            <div class="stage-tag">BETA VERSION</div>
+            <div class="dev-photos">
+                <div class="photo-placeholder"><img src="beta-1.jpg" alt="Beta Screen 1"></div>
+                <div class="photo-placeholder"><img src="beta-2.jpg" alt="Beta Screen 2"></div>
+            </div>
+            <div class="dev-text">
+                <p><strong>Feedback:</strong> Тестирование пользователями показало, что нужно добавить счетчик страниц (1/16).</p>
+            </div>
+            <div class="dev-video">
+                <iframe src="https://www.youtube.com/embed/ТВОЙ_ID_2" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="dev-block">
+            <div class="stage-tag active">FINAL VERSION</div>
+            <div class="dev-photos">
+                <div class="photo-placeholder"><img src="final-1.jpg" alt="Final Screen 1"></div>
+                <div class="photo-placeholder"><img src="final-2.jpg" alt="Final Screen 2"></div>
+            </div>
+            <div class="dev-text">
+                <p>Итоговый продукт: 16 страниц, AI Mode, Риск-метр и полная адаптивность.</p>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<div id="sidebar-overlay" class="overlay"></div>
+    <div class="tv-effect"></div> 
+    <div class="risk-meter">      
+        <div class="risk-fill" id="riskFill"></div>
+    </div>
+
+    <header class="reader-header">
+        <div class="logo-container">
+            <div class="logo">ODDS AGAINST LIFE</div>
+            <span class="tag">FINAL</span>
+        </div>
+        
+        <div class="ai-toggle-wrapper">
+            <span class="ai-label">AI MODE</span>
+            <label class="switch">
+                <input type="checkbox" id="ai-toggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        
+        <div class="header-right">
+            <div id="panel-counter">Panel 1 / 8</div>
+            <div class="bar-container"><div id="progress-bar"></div></div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h1 class="glitch-text">ODDS AGAINST LIFE</h1>
+                <p class="goal">"The house always wins. It's time to break the cycle."</p>
+                <div class="hero-buttons">
+                    <button class="btn-main" onclick="document.querySelector('.comic-container').scrollIntoView()">START READING</button>
+                    <button class="btn-outline" onclick="document.querySelector('.authors').scrollIntoView()">THE CREATORS</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="guide">
+        <div class="step-card">
+            <div class="step-num">01</div>
+            <h3>SCROLL</h3>
+            <p>Navigate through the dark reality of addiction.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">02</div>
+            <h3>TRACK</h3>
+            <p>Watch your progress on the top neon bar.</p>
+        </div>
+        <div class="step-card">
+            <div class="step-num">03</div>
+            <h3>REFLECT</h3>
+            <p>Every choice has a permanent consequence.</p>
+        </div>
+    </section>
+
+    <main class="comic-container">
+        <div class="panel"><img src="cover.jpg" alt="Cover"></div>
+        <div class="panel"><img src="page1.jpg" alt="Panel 1"></div>
+        <div class="panel"><img src="page2.jpg" alt="Panel 2"></div>
+        <div class="panel"><img src="page3.jpg" alt="Panel 3"></div>
+        <div class="panel"><img src="page4.jpg" alt="Panel 4"></div>
+        <div class="panel"><img src="page5.jpg" alt="Panel 5"></div>
+        <div class="panel"><img src="page6.jpg" alt="Panel 6"></div>
+        <div class="panel"><img src="page7.jpg" alt="Panel 7"></div>
+    </main>
+
+    <section class="project-insight">
+        <div class="insight-container">
+            <div class="insight-box">
+                <h2 class="glitch-text-small">THE MESSAGE</h2>
+                <p>
+                    "Odds Against Life" is not just a story; it's a warning. Gambling addiction doesn't just drain your wallet—it consumes your mind. We created this interactive webtoon to demonstrate the psychological descent into the casino trap. The core message is simple: <strong>The house always wins. The only way to survive is to break the cycle.</strong>
+                </p>
+            </div>
+            <div class="insight-box">
+                <h2 class="glitch-text-small">ART DIRECTION</h2>
+                <p>
+                    Why this style? We deliberately chose a dark, gritty aesthetic with harsh neon red accents. This color palette simulates the deceptive, aggressive allure of a casino. The heavy black shadows represent the anxiety and isolation of addiction, stripping away the glamorous illusion to reveal the dangerous reality underneath.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="authors">
+        <h2 class="title">THE CREATIVE TEAM</h2>
+        <div class="authors-grid">
+            <div class="author-card">
+                <div class="photo-frame"><img src="nurali.jpg" alt="Sapar Nurali"></div>
+                <h3>Sapar Nurali</h3>
+                <span class="role">Tech Lead / Developer</span>
+                <p class="author-desc">System architecture, UI/UX, and interaction logic.</p>
+            </div>
+            <div class="author-card">
+                <div class="photo-frame"><img src="timur.jpg" alt="Timur Abdualiev"></div>
+                <h3>Abdualiev Timur</h3>
+                <span class="role">Art Director / Illustrator</span>
+                <p class="author-desc">Concept art, storyboards, and visual narrative.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="action-plan reveal">
+        <div class="ap-container">
+            <h3 class="ap-title">// ACTION PLAN: BREAKING THE CYCLE</h3>
+            <div class="ap-grid">
+                <div class="ap-item">
+                    <span class="ap-num">01.</span>
+                    <p><strong>ACKNOWLEDGE:</strong> Recognize that gambling is a game of math, not luck. The house always wins in the long run.</p>
+                </div>
+                <div class="ap-item">
+                    <span class="ap-num">02.</span>
+                    <p><strong>DISCONNECT:</strong> Delete all betting apps and block gambling websites at the DNS level. Physical distance creates mental space.</p>
+                </div>
+                <div class="ap-item">
+                    <span class="ap-num">03.</span>
+                    <p><strong>REACH OUT:</strong> Gambling thrives in secrecy. Talk to someone you trust or call a professional helpline immediately.</p>
+                </div>
+            </div>
+            <p class="ap-footer">This project is part of a social awareness campaign. You are not alone.</p>
+        </div>
+    </section>
+<section class="help-survey-mini">
+    <div class="mini-help">
+        <span class="neon-label">GET HELP:</span>
+        <a href="tel:87780970450" class="help-link">/tel:87780970450</a>
+        <span class="help-desc">24/7 Confidential Support</span>
+    </div>
+
+    <div class="mini-poll" id="poll-box">
+        <p>Did this story make you think?</p>
+        <div class="poll-btns">
+            <button onclick="submitPoll('Yes')">YES</button>
+            <button onclick="submitPoll('No')">NO</button>
+        </div>
+    </div>
+    <p id="poll-thanks" style="display:none">Thank you for your response.</p>
+</section>
+    <footer class="footer">
+        <p>&copy; 2026 ODDS AGAINST LIFE PROJECT</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
