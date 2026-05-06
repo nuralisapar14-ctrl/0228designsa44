@@ -684,3 +684,15 @@ input:checked + .slider:before {
 }
 
 .overlay.active { display: block; }
+.panel img {
+    width: 100%;
+    display: block;
+    transition: opacity 0.4s ease-in-out; /* Плавная смена при переключении ИИ */
+    will-change: transform, opacity; /* Оптимизация для браузера */
+}
+
+.panel {
+    margin-bottom: 20px; /* Уменьшенный отступ для удобства скролла 16 страниц */
+    background: #000;
+    min-height: 400px; /* Чтобы пустые блоки не схлопывались при загрузке */
+}
