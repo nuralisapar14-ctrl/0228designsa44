@@ -696,3 +696,78 @@ input:checked + .slider:before {
     background: #000;
     min-height: 400px; /* Чтобы пустые блоки не схлопывались при загрузке */
 }
+/* --- REFLECTION SECTION AT BOTTOM --- */
+.reflection-container {
+    padding: 80px 20px;
+    background: #000;
+    border-top: 2px solid var(--neon-red);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.reflection-header {
+    margin-bottom: 50px;
+}
+
+.reflection-header h2 {
+    font-size: 2.5rem;
+    letter-spacing: 5px;
+}
+
+.red-line {
+    width: 100px;
+    height: 4px;
+    background: var(--neon-red);
+    margin: 15px auto;
+    box-shadow: 0 0 15px var(--neon-glow);
+}
+
+.reflection-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    text-align: left;
+}
+
+.reflection-card {
+    background: rgba(20, 20, 20, 0.8);
+    padding: 25px;
+    border: 1px solid #222;
+    border-left: 5px solid var(--neon-red);
+    transition: 0.3s;
+}
+
+.reflection-card:hover {
+    background: rgba(40, 0, 10, 0.5);
+    border-color: var(--neon-red);
+    transform: translateX(10px);
+}
+
+.reflection-card .question {
+    color: var(--neon-red);
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.reflection-card .answer {
+    color: #ccc;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.final-footer {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid #111;
+    color: #444;
+    font-size: 0.8rem;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 600px) {
+    .reflection-header h2 { font-size: 1.5rem; }
+    .reflection-card:hover { transform: none; }
+}
